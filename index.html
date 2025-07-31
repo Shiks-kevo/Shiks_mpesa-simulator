@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>M-Pesa Message Simulator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>M-Pesa Simulator</h1>
+
+    <form id="simForm">
+      <label>Payment Method:</label>
+      <select id="method" required>
+        <option value="">-- Select Method --</option>
+        <option value="pochi">Pochi la Biashara</option>
+        <option value="till">Till Number</option>
+        <option value="paybill">Paybill Number</option>
+      </select>
+
+      <label>Recipient Name (for Pochi only):</label>
+      <input type="text" id="recipientName" />
+
+      <label>Number (Phone, Till, or Paybill):</label>
+      <input type="text" id="recipientNumber" required />
+
+      <label>Amount (Ksh):</label>
+      <input type="number" id="amount" required />
+
+      <button type="submit">Generate Message</button>
+    </form>
+
+    <div id="output" class="output" style="display: none;">
+      <h3>Simulated M-Pesa Message:</h3>
+      <pre id="messageText" class="message-block"></pre>
+      <button onclick="copyMessage()">Copy Message</button>
+    </div>
+
+    
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
